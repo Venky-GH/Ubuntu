@@ -1,5 +1,5 @@
-let url = "http://localhost:9090/Desktop";
-let arr = {dir_name: 'Desktop'};
+let url = "http://localhost:9090/Desktop"; // manages the url to be shown in the browser
+let arr = {dir_name: 'Desktop'}; //stores path of the current directory/file
 let fname = "";
 let elm = "";
 
@@ -7,6 +7,7 @@ $(function () {
     listDir();
 });
 
+// List Directory and Files
 function listDir() {
     $.ajax({
         type: 'POST',
@@ -54,6 +55,7 @@ function listDir() {
     });
 }
 
+// Update URL
 function updateURL(fname) {
     if (fname.includes(".")) {
         alert("This is a File!");
@@ -68,6 +70,7 @@ function updateURL(fname) {
     }
 }
 
+// detect if user moves out of a folder, if yes then update arr and url
 $(window).on('popstate', function () {
     if (url != window.location.href) {
         window.history.pushState({}, null, window.location.href);
@@ -77,6 +80,7 @@ $(window).on('popstate', function () {
     }
 });
 
+// Create a folder or file
 function create(param) {
     let obj = {};
     let name = "";
@@ -110,27 +114,7 @@ function create(param) {
     });
 }
 
-$("#createDirForm").submit(function (e) {
-    e.preventDefault();
-    e.stopImmediatePropagation();
-    $("#createFolder").modal('toggle');
-    create("folder");
-});
-
-$("#createFileForm").submit(function (e) {
-    e.preventDefault();
-    e.stopImmediatePropagation();
-    $("#createFile").modal('toggle');
-    create("file");
-});
-
-$("#renameFForm").submit(function (e) {
-    e.preventDefault();
-    e.stopImmediatePropagation();
-    $("#renameF").modal('toggle');
-    rename($("#newname").val());
-});
-
+// Show custom menu when right click is done on a folder or a file
 function right_click_on_f(e, filename, elem) {
     fname = filename;
     elm = elem;
@@ -148,6 +132,7 @@ function right_click_on_f(e, filename, elem) {
     });
 }
 
+// Rename a file or a folder
 function rename(newname) {
     let currentPath = arr["dir_name"] + '/' + fname;
     let newPath = arr["dir_name"] + '/' + newname;
@@ -174,6 +159,7 @@ function rename(newname) {
     });
 }
 
+// Move a file or a folder to trash folder
 function moveToTrash() {
     let currentPath = arr["dir_name"] + '/' + fname;
     obj = {
@@ -196,3 +182,24 @@ function moveToTrash() {
         }
     });
 }
+
+$("#createDirForm").submit(function (e) {
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    $("#createFolder").modal('toggle');
+    create("folder");
+});
+
+$("#createFileForm").submit(function (e) {
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    $("#createFile").modal('toggle');
+    create("file");
+});
+
+$("#renameFForm").submit(function (e) {
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    $("#renameF").modal('toggle');
+    rename($("#newname").val());
+});
