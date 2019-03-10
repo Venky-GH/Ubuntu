@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/menu.css">
+    <title>Ubuntu</title>
+</head>
+<body>
+    <div id="main">
+
+    </div>
+    <!--file-->
+    <div class="file hidden">
+        <i class="fas fa-file"></i>
+        <p></p>
+    </div>
+
+    <!--folder-->
+    <div class="folder hidden">
+        <i class="fas fa-folder"></i>
+        <p></p>
+    </div>
+
+    <!--open menu-->
+    <div class="menu">
+        <p data-toggle="modal" data-target="#createFolder">Create Folder</p>
+        <p data-toggle="modal" data-target="#createFile">Create File</p>
+    </div>
+
+    <!--menu triggered on folder/file right click    -->
+    <div class="menu" id="rightclick_f">
+        <p data-toggle="modal" data-target="#renameF">Rename</p>
+        <p onclick="moveToTrash()">Move to Trash</p>
+    </div>
+
+    <!-- Modal Create Folder -->
+    <div class="modal fade" id="createFolder" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form id="createDirForm">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Enter folder name" id="foldername">
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn" value="Create">
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!--Modal Create File-->
+    <div class="modal fade" id="createFile" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form id="createFileForm">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Enter file name" id="filename">
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn" value="Create">
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!--Modal Rename File/Folder-->
+    <div class="modal fade" id="renameF" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form id="renameFForm">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Enter new name" id="newname">
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn" value="Create">
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="/js/menu.js"></script>
+    <script src="/js/common.js"></script>
+</body>
+</html>

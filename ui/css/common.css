@@ -1,0 +1,23 @@
+body {
+    background: url("/images/desktop.jpg");
+    background-size: cover;
+}
+
+.file, .folder {
+    color: white;
+}
+
+.file .fas, .folder .fas {
+    font-size: 3rem;
+}
+
+#main {
+    margin-left: 5rem;
+    margin-top: 5rem;
+}
+
+.btn {
+    background-color: #500056;
+    color: white;
+    border-radius: 0.3rem;
+}
