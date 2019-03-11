@@ -67,17 +67,18 @@ app.post('/create', function (req, res) {
     let type = "";
     if(req.body.name.includes(".")) {
         type = "file";
+        fs.closeSync(fs.openSync(dirpath, 'w'));
     }
     else {
         type = "folder";
+        mkdirp(dirpath, function(err) {
+            if (err) {
+                console.log(err);
+                res.status(500).send("Something went wrong!");
+            }
+            console.log("Successfully created test directory");
+        });
     }
-    mkdirp(dirpath, function(err) {
-        if (err) {
-            console.log(err);
-            res.status(500).send("Something went wrong!");
-        }
-        console.log("Successfully created test directory");
-    });
     pool.query('INSERT INTO "fileSystem" (name, path, status, type) VALUES ($1, $2, $3, $4)', [req.body.name, dirpath, 0, type], function (err, result) {
         if (err) {
             console.log("Something went wrong while inserting!");

@@ -1,7 +1,6 @@
 let url = "http://localhost:9090/Desktop"; // manages the url to be shown in the browser
 let arr = {dir_name: 'Desktop'}; //stores path of the current directory/file
 let fname = "";
-let elm = "";
 
 $(function () {
     listDir();
@@ -26,7 +25,7 @@ function listDir() {
                     elem.find("p").html(filename);
                     elem.attr("ondblclick", "updateURL('" + filename.toString() + "')");
                     elem.contextmenu(function (e) {
-                        right_click_on_f(e, filename, elem);
+                        right_click_on_f(e, filename);
                         e.preventDefault();
                         e.stopImmediatePropagation();
                     });
@@ -40,7 +39,7 @@ function listDir() {
                     elem.contextmenu(function (e) {
                         e.preventDefault();
                         e.stopImmediatePropagation();
-                        right_click_on_f(e, filename, elem);
+                        right_click_on_f(e, filename);
                     });
                     $("#main").append(elem);
                     $("#main").append("<br>");
@@ -65,8 +64,8 @@ function updateURL(fname) {
         else
             url += '/' + fname;
         arr["dir_name"] += '/' + fname;
-        listDir();
         window.history.pushState({}, null, url);
+        listDir();
     }
 }
 
@@ -115,9 +114,8 @@ function create(param) {
 }
 
 // Show custom menu when right click is done on a folder or a file
-function right_click_on_f(e, filename, elem) {
+function right_click_on_f(e, filename) {
     fname = filename;
-    elm = elem;
     let menu = document.getElementById("rightclick_f");
     let menu_style = menu.style;
     menu_style.top = e.clientY + "px";
@@ -175,6 +173,7 @@ function moveToTrash() {
         data: JSON.stringify(obj),
         success: function (response) {
             console.log(response);
+            listDir();
             listDir();
         },
         error: function (err) {
