@@ -59,7 +59,7 @@ function updateURL(fname) {
     if (fname.includes(".")) {
         alert("This is a File!");
     } else {
-        if(url == "http://localhost:9090/")
+        if (url == "http://localhost:9090/")
             url += fname;
         else
             url += '/' + fname;
@@ -173,8 +173,7 @@ function moveToTrash() {
         data: JSON.stringify(obj),
         success: function (response) {
             console.log(response);
-            listDir();
-            listDir();
+            setTimeout(listDir, 1000);
         },
         error: function (err) {
             console.log(err);
