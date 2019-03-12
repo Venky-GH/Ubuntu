@@ -173,7 +173,7 @@ function moveToTrash() {
         data: JSON.stringify(obj),
         success: function (response) {
             console.log(response);
-            setTimeout(listDir, 1000);
+            setTimeout(listDir, 500);
         },
         error: function (err) {
             console.log(err);
