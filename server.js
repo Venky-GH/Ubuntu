@@ -49,11 +49,10 @@ app.post('/listDirectory', function (req, res) {
         let content = [];
         files.forEach(file => {
             let filename = file.toString();
-            let obj = {name : filename};
-            if(filename.includes('.')) {
+            let obj = {name: filename};
+            if (filename.includes('.')) {
                 obj['type'] = "file";
-            }
-            else {
+            } else {
                 obj['type'] = "folder";
             }
             content.push(obj);
@@ -65,13 +64,12 @@ app.post('/listDirectory', function (req, res) {
 app.post('/create', function (req, res) {
     let dirpath = "./ui/" + req.body.path;
     let type = "";
-    if(req.body.name.includes(".")) {
+    if (req.body.name.includes(".")) {
         type = "file";
         fs.closeSync(fs.openSync(dirpath, 'w'));
-    }
-    else {
+    } else {
         type = "folder";
-        mkdirp(dirpath, function(err) {
+        mkdirp(dirpath, function (err) {
             if (err) {
                 console.log(err);
                 res.status(500).send("Something went wrong!");
@@ -94,8 +92,8 @@ app.post('/rename', function (req, res) {
     let newPath = './ui/' + req.body.newPath;
     let currentName = req.body.currentName;
     let newName = req.body.newName;
-    fs.rename(currentPath, newPath, function(err) {
-        if ( err ) {
+    fs.rename(currentPath, newPath, function (err) {
+        if (err) {
             console.log('ERROR: ' + err);
             res.status(500).send("Something went wrong!");
         }
@@ -113,11 +111,26 @@ app.post('/rename', function (req, res) {
 app.post('/moveToTrash', function (req, res) {
     let currentPath = './ui/' + req.body.currentPath;
     let newPath = './ui/Desktop/trash/' + req.body.fname;
+
+    fs.readdir(currentPath, (err, files) => {
+        let content = [];
+        files.forEach(file => {
+            let filename = file.toString();
+            let obj = {name: filename};
+            if (filename.includes('.')) {
+                obj['type'] = "file";
+            } else {
+                obj['type'] = "folder";
+            }
+            content.push(obj);
+        });
+        console.log(content);
+    });
+
     fsextra.move(currentPath, newPath, function (err) {
         if (err) {
             console.log(err);
-        }
-        else {
+        } else {
             console.log("success!");
         }
     });

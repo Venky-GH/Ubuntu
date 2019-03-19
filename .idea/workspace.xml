@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="090e2360-b2ae-4dc8-8b08-3ff0c11b8805" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/Desktop/trash/temp.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/ui/js/common.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,7 +12,25 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="398">
+              <caret line="127" column="7" selection-start-line="127" selection-start-column="7" selection-end-line="127" selection-end-column="7" />
+              <folding>
+                <element signature="e#361#461#0" />
+                <element signature="e#606#668#0" />
+                <element signature="e#712#774#0" />
+                <element signature="e#827#907#0" />
+                <element signature="e#957#1034#0" />
+                <element signature="e#1083#1159#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -22,17 +38,17 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/server.js" />
-        <option value="$PROJECT_DIR$/ui/js/common.js" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/ui/js/common.js" />
+        <option value="$PROJECT_DIR$/server.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="y" value="-10" />
-    <option name="width" value="1750" />
-    <option name="height" value="980" />
+    <option name="x" value="505" />
+    <option name="y" value="80" />
+    <option name="width" value="1040" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -42,6 +58,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -49,40 +66,15 @@
               <item name="Ubuntu" type="b2602c69:ProjectViewProjectNode" />
               <item name="Ubuntu" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Ubuntu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Ubuntu" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Ubuntu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Ubuntu" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="Desktop" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Ubuntu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Ubuntu" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="Desktop" type="462c0819:PsiDirectoryNode" />
-              <item name="venky" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Ubuntu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Ubuntu" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Work/FaceOne-Zenith" />
+    <property name="last_opened_file_path" value="E:/Portfolio/venky" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
@@ -114,11 +106,14 @@
       <workItem from="1552319994457" duration="340000" />
       <workItem from="1552324456825" duration="87000" />
       <workItem from="1552402129500" duration="3618000" />
+      <workItem from="1552561552949" duration="2326000" />
+      <workItem from="1552770587239" duration="1844000" />
+      <workItem from="1552815319536" duration="799000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8322000" />
+    <option name="totallyTimeSpent" value="13291000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -157,41 +152,6 @@
         <state relative-caret-position="-828" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="114" column="57" selection-start-line="114" selection-start-column="57" selection-end-line="114" selection-end-column="57" />
-          <folding>
-            <element signature="e#361#461#0" />
-            <element signature="e#606#668#0" />
-            <element signature="e#712#774#0" />
-            <element signature="e#827#907#0" />
-            <element signature="e#957#1034#0" />
-            <element signature="e#1083#1159#0" />
-            <element signature="e#1210#1714#0" />
-            <element signature="e#1480#1533#0" />
-            <element signature="e#1551#1606#0" />
-            <element signature="e#1758#2550#0" />
-            <element signature="e#2305#2495#0" />
-            <element signature="e#2324#2401#0" />
-            <element signature="e#2407#2489#0" />
-            <element signature="e#2594#3361#0" />
-            <element signature="e#2826#2965#0" />
-            <element signature="e#2847#2959#0" />
-            <element signature="e#3138#3306#0" />
-            <element signature="e#3157#3233#0" />
-            <element signature="e#3239#3300#0" />
-            <element signature="e#3578#3706#0" />
-            <element signature="e#3597#3638#0" />
-            <element signature="e#3652#3700#0" />
-            <element signature="e#3878#4046#0" />
-            <element signature="e#3897#3973#0" />
-            <element signature="e#3979#4040#0" />
-            <element signature="e#4141#4192#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -202,16 +162,62 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ui/css/common.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/ui/js/common.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="170" column="10" selection-start-line="170" selection-start-column="10" selection-end-line="170" selection-end-column="10" />
+        <state relative-caret-position="320">
+          <caret line="127" column="45" selection-start-line="127" selection-start-column="45" selection-end-line="127" selection-end-column="45" />
           <folding>
-            <element signature="n#!!block;n#listDir#0" />
+            <element signature="e#197#215#0" />
+            <element signature="e#1258#1846#0" />
+            <element signature="e#1558#1734#0" />
+            <element signature="e#1955#2022#0" />
             <element signature="n#!!block;n#updateURL#0" />
+            <element signature="e#2105#2146#0" />
+            <element signature="e#2152#2383#0" />
+            <element signature="e#2496#2731#0" />
+            <element signature="e#2535#2729#0" />
             <element signature="n#!!block;n#create#0" />
-            <element signature="n#!!block;n#right_click_on_f#0" />
+            <element signature="e#2851#3017#0" />
+            <element signature="e#2906#3010#0" />
+            <element signature="e#3023#3185#0" />
+            <element signature="e#3076#3178#0" />
+            <element signature="e#3197#3554#0" />
+            <element signature="e#3406#3475#0" />
+            <element signature="e#3507#3548#0" />
             <element signature="n#!!block;n#rename#0" />
+            <element signature="e#4284#4412#0" />
+            <element signature="e#4424#4781#0" />
+            <element signature="e#4633#4702#0" />
+            <element signature="e#4734#4775#0" />
+            <element signature="n#!!block;n#moveToTrash#0" />
+            <element signature="e#4918#4984#0" />
+            <element signature="e#4996#5373#0" />
+            <element signature="e#5210#5294#0" />
+            <element signature="e#5326#5367#0" />
+            <element signature="e#5419#5542#0" />
+            <element signature="e#5587#5706#0" />
+            <element signature="e#5748#5877#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/css/menu.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="127" column="7" selection-start-line="127" selection-start-column="7" selection-end-line="127" selection-end-column="7" />
+          <folding>
+            <element signature="e#361#461#0" />
+            <element signature="e#606#668#0" />
+            <element signature="e#712#774#0" />
+            <element signature="e#827#907#0" />
+            <element signature="e#957#1034#0" />
+            <element signature="e#1083#1159#0" />
           </folding>
         </state>
       </provider>
