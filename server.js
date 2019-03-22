@@ -112,28 +112,29 @@ app.post('/moveToTrash', function (req, res) {
     let currentPath = './ui/' + req.body.currentPath;
     let newPath = './ui/Desktop/trash/' + req.body.fname;
 
-    fs.readdir(currentPath, (err, files) => {
-        let content = [];
-        files.forEach(file => {
-            let filename = file.toString();
-            let obj = {name: filename};
-            if (filename.includes('.')) {
-                obj['type'] = "file";
-            } else {
-                obj['type'] = "folder";
-            }
-            content.push(obj);
+    if (!req.body.fname.includes('.')) {
+        fs.readdir(currentPath, (err, files) => {
+            let content = [];
+            files.forEach(file => {
+                let filename = file.toString();
+                let obj = {name: filename};
+                if (filename.includes('.')) {
+                    obj['type'] = "file";
+                } else {
+                    obj['type'] = "folder";
+                }
+                content.push(obj);
+            });
+            console.log(content);
         });
-        console.log(content);
-    });
-
+    }
     fsextra.move(currentPath, newPath, function (err) {
-        if (err) {
-            console.log(err);
-        } else {
-            console.log("success!");
-        }
-    });
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("success!");
+            }
+});
     pool.query('UPDATE "fileSystem" SET status = ($1), path = ($2) WHERE name = ($3) AND path = ($4)', [1, newPath, req.body.fname, currentPath], function (err, result) {
         if (err) {
             console.log("Something went wrong while updating!");
